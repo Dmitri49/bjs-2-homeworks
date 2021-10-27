@@ -44,8 +44,6 @@ function makeWork(arrOfArr, func) {
     }
   }
   
-  let arre = +Infinity
-
   return max;
 }
 
