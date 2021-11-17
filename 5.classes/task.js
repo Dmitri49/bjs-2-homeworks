@@ -45,24 +45,21 @@ class Book extends PrintEditionItem {
 
 class NovelBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
-      super(name, releaseDate, pagesCount);
-      this.author = author;
+      super(author, name, releaseDate, pagesCount);
       this.type = "novel";
     }
 }
 
 class FantasticBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
-      super(name, releaseDate, pagesCount);
-      this.author = author;
+      super(author, name, releaseDate, pagesCount);
       this.type = "fantastic";
     }
 }
 
 class DetectiveBook extends Book {
     constructor(author, name, releaseDate, pagesCount) {
-      super(name, releaseDate, pagesCount);
-      this.author = author;
+      super(author, name, releaseDate, pagesCount);
       this.type = "detective";
     }
 }
@@ -104,3 +101,13 @@ class Library {
     }
 
 }
+
+const picknick = new FantasticBook(
+    "Аркадий и Борис Стругацкие",
+    "Пикник на обочине",
+    1972,
+    168
+);
+
+
+console.log(picknick); //"Аркадий и Борис Стругацкие"
