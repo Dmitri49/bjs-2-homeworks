@@ -10,12 +10,9 @@ class AlarmClock {
             throw new Error('error text');
         }
 
-
-        for (const value of this.alarmCollection) {
-            if (id === value.id) {
-                console.error();
-                return 'Такой будильник уже существует!'
-            }
+        if (this.alarmCollection.find(item => item.id === id)) {
+            console.error('Такой будильник уже существует!');
+            return;
         }
 
         let alarm = {
@@ -28,45 +25,44 @@ class AlarmClock {
     }
 
     removeClock(id) {
+        let index = this.alarmCollection.findIndex(item => item.id === id);
 
-        const search = this.alarmCollection.filter(item => item.id === id);
-
-        if (search.length === 0) {
+        if (index === -1) {
             return false;
         }
 
-        this.alarmCollection.forEach(element => this.alarmCollection.splice((this.alarmCollection.findIndex(item => item.id === id)), 1));
+        this.alarmCollection.splice(index, 1);
 
         return true;
     }
 
     getCurrentFormattedTime() {
-        let date = new Date();
-        return `${date.getHours()}:${date.getMinutes()}`;
+        let date = new Date().toLocaleTimeString("ru-Ru", {
+            hour: "2-digit",
+            minute: "2-digit",
+        });
+        return date;
     }
 
     start() {
 
-        function checkClock(bell) {
-            let date = new Date();
-            if (`${date.getHours()}:${date.getMinutes()}` === bell.time) {
-                bell.callback();
-            }
-    
-            if(this.timerId === null) {
-                let interval = setInterval(() => {
-                    this.alarmCollection.forEach(element => checkClock());
-                    this.timerId = interval;
-                }, 1000);
-                
-            }
+        let checkClock = (alarm) => {
+            if (alarm.time === this.getCurrentFormattedTime()) {
+                alarm.callback();
+            };
         }
+
+        if (this.timerId === null) {
+            this.timerId = setInterval(() => {
+                this.alarmCollection.forEach(element => checkClock(element));
+            }, 1000);
+        }
+
     }
 
     stop() {
-
         if (this.timerId !== null) {
-            clearInterval(interval);
+            clearInterval(this.timerId);
             this.timerId = null;
         }
     }
@@ -76,11 +72,12 @@ class AlarmClock {
     }
 
     clearAlarms() {
-        clearInterval(this.timerId);
+        this.stop();
         this.alarmCollection.splice(0, this.alarmCollection.length);
     }
     
 
-}
+};
+
 
 
