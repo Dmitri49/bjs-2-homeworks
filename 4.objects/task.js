@@ -179,3 +179,12 @@ console.log(student2);
 
 // ==================================== //
 
+// Object.prototype.showName = function () {
+//   console.log('Hello');
+// }
+
+// const per = {}
+
+// console.log(per.showName());
+
+// ==================================== //
