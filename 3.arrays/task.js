@@ -6,11 +6,13 @@
 //   return resultArr = arr.filter((number) => number > 0 && number % 3 === 0).map((number) => number * 10);
 // }
 
+// ========================================================================================================= //
 
-let arr = ['I', 'am' ,'Dima'];
 
-let a = arr.join(' ');
-console.log(a);
+// let arr = ['I', 'am' ,'Dima'];
+
+// let a = arr.join(' ');
+// console.log(a);
 // console.log(arr);
 
 // let str = 'I am Dima';

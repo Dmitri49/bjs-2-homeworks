@@ -67,6 +67,7 @@ console.log(student2);
 
 // ============================================================================= //
 
+
 // let ivan = {
 //   firstName: "Dmitri",
 //   lastName: "Lissin",
@@ -81,8 +82,10 @@ console.log(student2);
 // ======================================= //
 
 // for (let key in ivan) {
-//   console.log(`${key} = ${ivan[key]}`);
+//   console.log(ivan[key]);
+//   // console.log(`${key} = ${ivan[key]}`);
 // }
+
 
 // ======================================= //
 
