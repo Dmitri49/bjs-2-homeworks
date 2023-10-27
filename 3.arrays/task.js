@@ -1,4 +1,3 @@
-console.log ("Hello");
 // function compareArrays(arr1, arr2) {
 //   return result = arr1.length === arr2.length && arr1.every((number, i) => number === arr2[i]);
 // }
@@ -8,7 +7,6 @@ console.log ("Hello");
 // }
 
 // ========================================================================================================= //
-
 
 // let arr = ['I', 'am' ,'Dima'];
 
@@ -34,15 +32,12 @@ console.log ("Hello");
 
 // console.log(maries);
 
-
-
 // const timeIntervals = [1800, 3600, 86400];
 // const secondsInHour = 3600;
 
 // const time = timeIntervals.filter((item) => item / secondsInHour);
 
 // console.log(time);
-
 
 // let a = {
 //   hello() {
@@ -55,8 +50,6 @@ console.log ("Hello");
 // }
 
 // a.hello()
-
-
 
 // const timeIntervals = [1800, 3600, 86400];
 // const secondsInHour = 3600;
