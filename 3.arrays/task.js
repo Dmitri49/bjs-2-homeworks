@@ -1,3 +1,4 @@
+console.log ("Hello");
 // function compareArrays(arr1, arr2) {
 //   return result = arr1.length === arr2.length && arr1.every((number, i) => number === arr2[i]);
 // }
